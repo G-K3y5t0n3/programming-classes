@@ -1,0 +1,9 @@
+Team Name(?):
+Chase - Right Next to me
+Emma - Diagonally Right from me
+Seth - In front of me
+MJ - Me
+
+cls - clears terminal history
+... - shortcut for pass
+ctrl p + r - runs python file
