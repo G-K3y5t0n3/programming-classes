@@ -93,14 +93,20 @@ def main():
 def print_death_age(people_dict):
     """For each person in the people dictionary,
     print the person's name and age at death.
-
+    
     Parameter
         people_dict: a dictionary that contains data about people
             Each item in the dictionary is in this format:
             person_key: [name, gender, birth_year, death_year]
     Return: nothing
     """
-    pass
+    print("Ages at Death")
+    for people in people_dict:
+        people_info = people_dict[people]
+        name = people_info[NAME_INDEX]
+        age = people_info[DEATH_YEAR_INDEX] - people_info[BIRTH_YEAR_INDEX]
+        print(f"{name} at {age}")
+
 
 
 def count_genders(people_dict):
@@ -113,7 +119,19 @@ def count_genders(people_dict):
             person_key: [name, gender, birth_year, death_year]
     Return: nothing
     """
-    pass
+    print("Genders")
+    for people in people_dict:
+        people_info = people_dict[people]
+        male_count = 0
+        female_count = 0
+        # gender = people_info[GENDER_INDEX]
+        # if gender == "M":
+        #     male_count = male_count + 1
+        # elif gender == "F":
+        #     female_count = female_count + 1
+    print(f"""Number of males: {male_count}
+Number of females: {female_count}""")
+        
 
 
 def print_marriages(marriages_dict, people_dict):
