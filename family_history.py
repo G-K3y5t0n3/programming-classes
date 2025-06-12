@@ -119,16 +119,17 @@ def count_genders(people_dict):
             person_key: [name, gender, birth_year, death_year]
     Return: nothing
     """
+    male_count = 0
+    female_count = 0
     print("Genders")
     for people in people_dict:
         people_info = people_dict[people]
-        male_count = 0
-        female_count = 0
-        # gender = people_info[GENDER_INDEX]
-        # if gender == "M":
-        #     male_count = male_count + 1
-        # elif gender == "F":
-        #     female_count = female_count + 1
+        gender = people_info[GENDER_INDEX]
+        if gender == "M":
+            # male_count = male_count + 1
+            male_count += 1
+        elif gender == "F":
+            female_count += 1
     print(f"""Number of males: {male_count}
 Number of females: {female_count}""")
         
@@ -148,7 +149,25 @@ def print_marriages(marriages_dict, people_dict):
             person_key: [name, gender, birth_year, death_year]
     Return: nothing
     """
-    pass
+    print("Marriages")
+    for marriages in marriages_dict:
+        marriage_info = marriages_dict
+        husband = marriage_info[HUSBAND_KEY_INDEX]
+        wife = marriage_info[WIFE_KEY_INDEX]
+        wedding_year = marriage_info[WEDDING_YEAR_INDEX]
+        #
+        husband_info = people_dict[husband]
+        husband_name = husband_info[NAME_INDEX]
+        husband_by = husband_info[BIRTH_YEAR_INDEX]
+        husband_age = wedding_year - husband_by
+        #
+        wife_info = people_dict[wife]
+        wife_name = wife_info[NAME_INDEX]
+        wife_by = wife_info[BIRTH_YEAR_INDEX]
+        wife_age = wedding_year = wife_by
+
+    print(f"{husband_name} at {husband_age} > {wedding_year} < {wife_name} at {wife_age}")
+        
 
 
 # If this file was executed like this:
