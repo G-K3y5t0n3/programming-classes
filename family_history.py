@@ -151,27 +151,27 @@ def print_marriages(marriages_dict, people_dict):
     """
     print("Marriages")
     # Simplified for my brain cells
-    # for husband_id, wife_id, year in marriages_dict.values():
-    #     husband_age = year - people_dict[husband_id][2]
-    #     wife_age = year - people_dict[wife_id][2]
-    #     print(f"{people_dict[husband_id][0]} at {husband_age} > {year} < {people_dict[wife_id][0]} at {wife_age}")
+    for husband_id, wife_id, year in marriages_dict.values():
+        husband_age = year - people_dict[husband_id][2]
+        wife_age = year - people_dict[wife_id][2]
+        print(f"{people_dict[husband_id][0]} at {husband_age} > {year} < {people_dict[wife_id][0]} at {wife_age}")
 
-    for marriages in marriages_dict:
-        marriage_info = marriages_dict
-        husband = marriage_info[marriages][HUSBAND_KEY_INDEX]
-        wife = marriage_info[marriages][WIFE_KEY_INDEX]
-        wedding_year = marriage_info[marriages][WEDDING_YEAR_INDEX]
-        #
-        husband_info = people_dict[husband]
-        husband_name = husband_info[NAME_INDEX]
-        husband_by = husband_info[BIRTH_YEAR_INDEX]
-        husband_age = wedding_year - husband_by
-        #
-        wife_info = people_dict[wife]
-        wife_name = wife_info[NAME_INDEX]
-        wife_by = wife_info[BIRTH_YEAR_INDEX]
-        wife_age = wedding_year - wife_by
-        print(f"{husband_name} at {husband_age} > {wedding_year} < {wife_name} at {wife_age}")
+    # for marriages in marriages_dict:
+    #     marriage_info = marriages_dict
+    #     husband = marriage_info[marriages][HUSBAND_KEY_INDEX]
+    #     wife = marriage_info[marriages][WIFE_KEY_INDEX]
+    #     wedding_year = marriage_info[marriages][WEDDING_YEAR_INDEX]
+    #     #
+    #     husband_info = people_dict[husband]
+    #     husband_name = husband_info[NAME_INDEX]
+    #     husband_by = husband_info[BIRTH_YEAR_INDEX]
+    #     husband_age = wedding_year - husband_by
+    #     #
+    #     wife_info = people_dict[wife]
+    #     wife_name = wife_info[NAME_INDEX]
+    #     wife_by = wife_info[BIRTH_YEAR_INDEX]
+    #     wife_age = wedding_year - wife_by
+    #     print(f"{husband_name} at {husband_age} > {wedding_year} < {wife_name} at {wife_age}")
 
         
 
