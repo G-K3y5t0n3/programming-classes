@@ -26,7 +26,7 @@ def main():
 
     # Call the compute_molar_mass function to compute the
     # molar mass of the molecule from the compound list.
-    molar_mass = compute_molar_mass(symbol_quantity_list, periodic_table_dict)
+    molar_mass = round((compute_molar_mass(symbol_quantity_list, periodic_table_dict)), 5)
 
     # Compute the number of moles in the sample.
     mole_amount = round(samaple_mass / molar_mass, 5)
