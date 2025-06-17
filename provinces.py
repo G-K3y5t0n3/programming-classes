@@ -1,3 +1,5 @@
-open(provinces.txt, mode=r)
+def main():
+    provinces_list = read_list()
+    print(provinces_list)
 
-provinces_list = read_list(provinces.txt)
+main()
