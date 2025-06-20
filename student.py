@@ -1,13 +1,15 @@
 def main():
+    repeat = ''
     clean_student_info = read_dictionary("students.csv")
-    print(clean_student_info)
-    i_number = input("Please enter an I-Number (xxxxxxxxx): ")
-    if i_number in clean_student_info:
-        student_name = clean_student_info[i_number]
-        print(student_name)
+    while repeat != "no":
+        i_number = input("Please enter an I-Number (xxxxxxxxx): ")
+        if i_number in clean_student_info:
+            student_name = clean_student_info[i_number]
+            print(student_name)
 
-    else:
-        print(f"There is no such student with the I-Number: {i_number} ")
+        else:
+            print(f"There is no such student with the I-Number: {i_number} ")
+        repeat = input("Would you like to search for another I-Number (yes/no)? ")
 
 def read_dictionary(filename):
     """Read the contents of a CSV file into a
