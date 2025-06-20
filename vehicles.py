@@ -17,6 +17,7 @@ def main():
     MANUFACTURER_INDEX = 1
     MODEL_INDEX = 2
     COLOR_INDEX = 3
+    #These indexes only work due to the quantity of items in a list
 
     # Ask the user for a vehicle identification number (VIN).
     vin = input("Please enter a VIN: ")
