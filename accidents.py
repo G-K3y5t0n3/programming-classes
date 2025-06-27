@@ -26,8 +26,8 @@ def main():
             with open(filename, "rt") as text_file:
 
                 # Prompt the user for a percentage.
-                perc_reduc = float(input(
-                    "Percent reduction of texting while driving [0, 100]: "))
+                perc_reduc = get_float("Percent reduction of texting"
+                " while driving [0, 100]: ", 0, 100)
 
                 print()
                 print(f"With a {perc_reduc}% reduction in using a cell",
@@ -65,9 +65,7 @@ def main():
         except ValueError as val_error:
                 # This code will be executed if the user enters
                 # an invalid integer for the line number.
-                print()
-                print(type(val_error).__name__, val_error, sep=": ")
-                print(f"Error: could not convert string to float: {val_error}")
+                print(f"\nError: could not convert string to float: {val_error}")
         repeat = input('Would you like to run the code again (yes/no)? ')
         print('-' *40)
 
@@ -76,6 +74,33 @@ def main():
         Hint: you could add an if statement immediately after the line of code that gets 
         the percentage from the user.'''
 
+def get_float(prompt, lower_bound, upper_bound):
+    """Prompt the user for a number and return the number as a float.
+
+    Parameters
+        prompt: A string to display to the user.
+        lower_bound: The lowest (smallest) number
+            that the user may enter.
+        upper_bound: The highest (largest) number
+            that the user may enter.
+    Return: The number that the user entered.
+    """
+    number = None
+    while number == None:
+        try:
+            number = float(input(prompt))
+            if number < lower_bound:
+                print(f"Error: {number} is too low." \
+                        f" Please enter a different number.")
+                number = None
+            elif number > upper_bound:
+                print(f"Error: {number} is too high." \
+                        f" Please enter a different number.")
+                number = None
+        except ValueError as val_err:
+            print("Error:", val_err)
+    print()
+    return number
 
 def estimate_reduction(row, behavior_key, perc_reduc):
     """Estimate and return the number of injuries and deaths that
