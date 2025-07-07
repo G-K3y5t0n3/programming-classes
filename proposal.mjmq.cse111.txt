@@ -10,19 +10,25 @@ CSE 111 Proposal for a Student Chosen Program
     knowledge.)
 
 1. What is the title of your program?
+    passport_hub.py
 
 2. What real-world problem will your program address or help to solve?
+    - Generating passwords
+    - Checking password security
+    - Pulling up saved passwords from a file (csv for this project)
 
 3. What will you learn from developing this program?
+    - I will learn the basics of password creation and checkig for my cybersecurity major
 
 4. What Python modules will your program use?
-
     (Some examples are: csv, datetime, functools, matplotlib, math,
     pandas, pytest, random, requests, and tkinter.)
+    - csv
+    - random
+    - pytest
 
 5. Will you separate your Python program into functions that each
 perform a single task?
-
     (Remember that the most reusable functions don't get user input and
     don't print results but instead have parameters and return a result.
     Functions that get user input and print results are important and do
@@ -34,6 +40,9 @@ perform a single task?
     a result. Therefore, you should write most of your program functions
     to have parameters and return a result.)
 
+    Yes, otherwise the things we learned in this class would be completely useless
+
 6. Will you write test functions to test at least two of your program
 functions?
+    Yes, otherwise the pytest modules we learned how to use would be a complete waste of time 
 
