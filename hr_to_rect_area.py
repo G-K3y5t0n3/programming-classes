@@ -68,7 +68,7 @@ def populate_main_window(frm_main):
     lbl_area = Label(frm_main, text="Area:")
 
     # Create labels that will display the results.
-    lbl_calculated_area = Label(frm_main, width=3)
+    lbl_calculated_area = Label(frm_main, width=20)
     lbl_calculated_area_units = Label(frm_main, text="units")
 
     # Create the Clear button.
@@ -83,12 +83,13 @@ def populate_main_window(frm_main):
     ent_height.grid(row=1, column=1, padx=3, pady=3)
     lbl_height_units.grid(row=1, column=2, padx=0, pady=3)
     #
+    lbl_warning.grid(row=2, column=1)
     #
-    lbl_area.grid(row=2, column=0, padx=3, pady=3)
-    lbl_calculated_area.grid(row=2, column=1, padx=3, pady=3)    
-    lbl_calculated_area_units.grid(row=2, column=2, padx=0, pady=3)
+    lbl_area.grid(row=3, column=0, padx=3, pady=3)
+    lbl_calculated_area.grid(row=3, column=1, padx=3, pady=3)    
+    lbl_calculated_area_units.grid(row=3, column=3, padx=0, pady=3)
     #
-    btn_clear.grid(row=3, column=0, padx=3, pady=3, columnspan=4, sticky="w")
+    btn_clear.grid(row=4, column=0, padx=3, pady=3, columnspan=4, sticky="w")
 
 
     # This function will be called each time the user releases a key.
@@ -96,7 +97,6 @@ def populate_main_window(frm_main):
         """Compute and display the user's slowest
         and fastest beneficial heart rates.
         """
-        print('Hello world')
         try:
             # Get the user's intended width.
             width = ent_width.get()
@@ -110,11 +110,10 @@ def populate_main_window(frm_main):
             # Display the calculated area
             lbl_calculated_area.config(text=f"{area:.0f}")
 
-        except ValueError as E:
+        except ValueError:
             # When the user deletes all the digits in the age
             # entry box, clear the slowest and fastest labels.
             lbl_calculated_area.config(text="Cannot Calculate")
-            raise E
 
     # This function will be called each time
     # the user presses the "Clear" button.
@@ -130,6 +129,7 @@ def populate_main_window(frm_main):
     # that the computer will call the calculate function
     # when the user changes the text in the entry box.
     ent_width.bind("<KeyRelease>", calculate)
+    ent_height.bind("<KeyRelease>", calculate)
 
     # Bind the clear function to the clear button so
     # that the computer will call the clear function
