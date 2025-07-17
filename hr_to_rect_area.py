@@ -64,7 +64,6 @@ def populate_main_window(frm_main):
     lbl_width_units = Label(frm_main, text="units")
     lbl_height_units = Label(frm_main, text="units")
 
-
     # Create a label that displays "Area:"
     lbl_area = Label(frm_main, text="Area:")
 
@@ -97,6 +96,7 @@ def populate_main_window(frm_main):
         """Compute and display the user's slowest
         and fastest beneficial heart rates.
         """
+        print('Hello world')
         try:
             # Get the user's intended width.
             width = ent_width.get()
@@ -110,10 +110,11 @@ def populate_main_window(frm_main):
             # Display the calculated area
             lbl_calculated_area.config(text=f"{area:.0f}")
 
-        except ValueError:
+        except ValueError as E:
             # When the user deletes all the digits in the age
             # entry box, clear the slowest and fastest labels.
-            lbl_calculated_area.config(text="")
+            lbl_calculated_area.config(text="Cannot Calculate")
+            raise E
 
     # This function will be called each time
     # the user presses the "Clear" button.
